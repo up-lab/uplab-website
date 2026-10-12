@@ -1,391 +1,470 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Uplab - Tech team as a service</title>
+		<title>Uplab — AI-first tech team as a service</title>
 		<meta
 			name="description"
-			content="We are tech experts, with 15 years of experience building technically challenging web products. Let's build together 🤝🏼"
+			content="Uplab designs, builds and ships AI agents and LLM-powered products, backed by 15+ years of engineering technically challenging software. Let's build together 🤝🏼"
 		/>
+		<meta name="theme-color" content="#07090c" />
+		<link rel="icon" type="image/png" href="dist/images/favicon-new.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="icon" type="image/png" href="dist/images/favicon-new.png" />
-		<link rel="stylesheet" href="dist/css/style.css" />
-		<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
-		<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+		<link rel="stylesheet" href="dist/css/site.css" />
+		<script>document.documentElement.classList.add("js");</script>
 	</head>
-	<body class="is-boxed has-animations">
-		<div class="body-wrap">
-			<header class="site-header">
-				<div class="container">
-					<div class="site-header-inner">
-						<div class="brand header-brand">
-							<h1 class="m-0">
-								<a href="/">
-									<img
-										class="header-logo-image"
-										src="dist/images/uplab-logo-white-740-new.png"
-										alt="Uplab logo"
-										width="250"
-									/>
-								</a>
-							</h1>
-						</div>
-					</div>
-				</div>
-			</header>
+	<body>
+		<svg class="sprite" aria-hidden="true">
+			<symbol id="i-github" viewBox="0 0 24 24"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></symbol>
+			<symbol id="i-linear" viewBox="0 0 24 24"><title>Linear</title><path d="M2.886 4.18A11.982 11.982 0 0 1 11.99 0C18.624 0 24 5.376 24 12.009c0 3.64-1.62 6.903-4.18 9.105L2.887 4.18ZM1.817 5.626l16.556 16.556c-.524.33-1.075.62-1.65.866L.951 7.277c.247-.575.537-1.126.866-1.65ZM.322 9.163l14.515 14.515c-.71.172-1.443.282-2.195.322L0 11.358a12 12 0 0 1 .322-2.195Zm-.17 4.862 9.823 9.824a12.02 12.02 0 0 1-9.824-9.824Z" /></symbol>
+			<symbol id="i-slack" viewBox="0 0 24 24"><title>Slack</title><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" /></symbol>
+			<symbol id="i-notion" viewBox="0 0 24 24"><title>Notion</title><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z" /></symbol>
+			<symbol id="i-postgresql" viewBox="0 0 24 24"><title>PostgreSQL</title><path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z" /></symbol>
+			<symbol id="i-stripe" viewBox="0 0 24 24"><title>Stripe</title><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z" /></symbol>
+			<symbol id="i-docker" viewBox="0 0 24 24"><title>Docker</title><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z" /></symbol>
+			<symbol id="i-sentry" viewBox="0 0 24 24"><title>Sentry</title><path d="M13.91 2.505c-.873-1.448-2.972-1.448-3.844 0L6.904 7.92a15.478 15.478 0 0 1 8.53 12.811h-2.221A13.301 13.301 0 0 0 5.784 9.814l-2.926 5.06a7.65 7.65 0 0 1 4.435 5.848H2.194a.365.365 0 0 1-.298-.534l1.413-2.402a5.16 5.16 0 0 0-1.614-.913L.296 19.275a2.182 2.182 0 0 0 .812 2.999 2.24 2.24 0 0 0 1.086.288h6.983a9.322 9.322 0 0 0-3.845-8.318l1.11-1.922a11.47 11.47 0 0 1 4.95 10.24h5.915a17.242 17.242 0 0 0-7.885-15.28l2.244-3.845a.37.37 0 0 1 .504-.13c.255.14 9.75 16.708 9.928 16.9a.365.365 0 0 1-.327.543h-2.287c.029.612.029 1.223 0 1.831h2.297a2.206 2.206 0 0 0 1.922-3.31z" /></symbol>
+		</svg>
 
-			<main>
-				<section class="hero">
-					<div class="container">
-						<div class="hero-inner">
-							<div class="hero-copy">
-								<h1 class="hero-title mt-0">
-									Tech team as a service
-								</h1>
-								<p class="hero-paragraph">
-									We are tech experts, with 15 years of
-									experience building technically challenging
-									applications. <br />
-									Let's build together 🤝🏼
-								</p>
-								<div class="hero-cta">
-									<a
-										class="button button-primary"
-										href="mailto:sylvain@uplab.fr"
-										>Get in touch</a
-									><a class="button" href="#features"
-										>Our competences</a
-									>
-								</div>
-							</div>
-							<div class="hero-figure anime-element">
-								<svg
-									class="placeholder"
-									width="528"
-									height="396"
-									viewBox="0 0 528 396"
-								>
-									<rect
-										width="528"
-										height="396"
-										style="fill: transparent"
-									/>
-								</svg>
-								<div
-									class="hero-figure-box hero-figure-box-01"
-									data-rotation="45deg"
-								></div>
-								<div
-									class="hero-figure-box hero-figure-box-02"
-									data-rotation="-45deg"
-								></div>
-								<div
-									class="hero-figure-box hero-figure-box-03"
-									data-rotation="0deg"
-								></div>
-								<div
-									class="hero-figure-box hero-figure-box-04"
-									data-rotation="-135deg"
-								></div>
-								<div
-									class="hero-figure-box hero-figure-box-05"
-								></div>
-								<div
-									class="hero-figure-box hero-figure-box-06"
-								></div>
-								<div
-									class="hero-figure-box hero-figure-box-07"
-								></div>
-								<div
-									class="hero-figure-box hero-figure-box-08"
-									data-rotation="-22deg"
-								></div>
-								<div
-									class="hero-figure-box hero-figure-box-09"
-									data-rotation="-52deg"
-								></div>
-								<div
-									class="hero-figure-box hero-figure-box-10"
-									data-rotation="-50deg"
-								></div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section id="features" class="features section">
-					<div class="container">
-						<div
-							class="features-inner section-inner has-bottom-divider"
-						>
-							<div class="features-wrap">
-								<div class="feature text-center is-revealing">
-									<div class="feature-inner">
-										<div class="feature-icon">
-											<img
-												src="dist/images/feature-icon-01.svg"
-												alt="Feature 01"
-											/>
-										</div>
-										<h4 class="feature-title mt-24">
-											Backend
-										</h4>
-										<p class="text-sm mb-0">
-											Delivering high availability APIs &
-											scalable backends, with a focus on
-											performances.
-										</p>
-									</div>
-								</div>
-								<div class="feature text-center is-revealing">
-									<div class="feature-inner">
-										<div class="feature-icon">
-											<img
-												src="dist/images/feature-icon-02.svg"
-												alt="Feature 02"
-											/>
-										</div>
-										<h4 class="feature-title mt-24">
-											Data Engineering
-										</h4>
-										<p class="text-sm mb-0">
-											Optimizing DB access for each use
-											case. Leveraging multiple DB engines
-											such as SQL, MongoDB, Redis,
-											ElasticSearch, Neo4j.
-										</p>
-									</div>
-								</div>
-								<div class="feature text-center is-revealing">
-									<div class="feature-inner">
-										<div class="feature-icon">
-											<img
-												src="dist/images/feature-icon-04.svg"
-												alt="Feature 04"
-											/>
-										</div>
-										<h4 class="feature-title mt-24">
-											Blockchain
-										</h4>
-										<p class="text-sm mb-0">
-											Building decentralized applications
-											interacting with Smart Contracts on
-											any EVM chains.
-										</p>
-									</div>
-								</div>
-								<div class="feature text-center is-revealing">
-									<div class="feature-inner">
-										<div class="feature-icon">
-											<img
-												src="dist/images/feature-icon-03.svg"
-												alt="Feature 03"
-											/>
-										</div>
-										<h4 class="feature-title mt-24">
-											Data science
-										</h4>
-										<p class="text-sm mb-0">
-											Add a layer of Data Science to make
-											your product smarter. Text analysis,
-											image recognition, recommendation
-											engine, etc.
-										</p>
-									</div>
-								</div>
-
-								<div class="feature text-center is-revealing">
-									<div class="feature-inner">
-										<div class="feature-icon">
-											<img
-												src="dist/images/feature-icon-05.svg"
-												alt="Feature 05"
-											/>
-										</div>
-										<h4 class="feature-title mt-24">
-											DevOps
-										</h4>
-										<p class="text-sm mb-0">
-											Deploying applications as micro
-											service in the cloud, for higher
-											uptime and costs optimization.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="pricing section">
-					<div class="container-sm">
-						<div class="pricing-inner section-inner">
-							<div class="pricing-header text-center">
-								<h2 class="section-title mt-0">Meet us</h2>
-								<p class="section-paragraph mb-0">
-									Hi, I'm Sylvain, Uplab founder 👋🏼 <br />
-									We are a team of passionate engineers,
-									focused on customer satisfaction. We help
-									companies launch technically challenging and
-									innovative products 🎯
-								</p>
-							</div>
-							<div class="pricing-tables-wrap">
-								<div class="pricing-table">
-									<div
-										class="pricing-table-inner is-revealing"
-									>
-										<img
-											src="dist/images/sylvain.png"
-											alt="Sylvain Uplab"
-										/>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="cta section">
-					<div class="container">
-						<div class="cta-inner section-inner">
-							<h3 class="section-title mt-0">
-								Let's talk about your project!
-							</h3>
-							<div class="cta-cta">
-								<a
-									class="button button-primary button-wide-mobile"
-									href="mailto:sylvain@uplab.fr"
-									>Get in touch</a
-								>
-							</div>
-						</div>
-					</div>
-				</section>
-			</main>
-
-			<footer class="site-footer">
-				<div class="container">
-					<div class="site-footer-inner">
-						<div class="brand footer-brand">
-							<a href="#">
-								<img
-									class="header-logo-image"
-									width="100"
-									src="dist/images/uplab-logo-white-740-new.png"
-									alt="Uplab Logo"
-								/>
-							</a>
-						</div>
-						<ul class="footer-links list-reset">
-							<li>
-								254 Rue Vendôme<br />
-								69003 Lyon<br />
-								France
-							</li>
-						</ul>
-						<ul class="footer-social-links list-reset">
-							<li>
-								<a
-									href="https://www.linkedin.com/in/sylvain-goumy/"
-								>
-									<span class="screen-reader-text"
-										>LinkedIn</span
-									>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										x="0px"
-										y="0px"
-										width="16"
-										height="16"
-										viewBox="0,0,256,256"
-										style="fill: #000000"
-									>
-										<g
-											fill="#0270d7"
-											fill-rule="nonzero"
-											stroke="none"
-											stroke-width="1"
-											stroke-linecap="butt"
-											stroke-linejoin="miter"
-											stroke-miterlimit="10"
-											stroke-dasharray=""
-											stroke-dashoffset="0"
-											font-family="none"
-											font-weight="none"
-											font-size="none"
-											text-anchor="none"
-											style="mix-blend-mode: normal"
-										>
-											<g
-												transform="scale(10.66667,10.66667)"
-											>
-												<path
-													d="M21.80078,0h-19.60156c-1.19922,0 -2.19922,1 -2.19922,2.19922v19.60156c0,1.19922 1,2.19922 2.19922,2.19922h19.60156c1.19922,0 2.19922,-1 2.19922,-2.19922v-19.60156c0,-1.19922 -1,-2.19922 -2.19922,-2.19922zM7,20h-4v-11h4zM5,7.69922c-1.19922,0 -2,-0.80078 -2,-1.80078c0,-1.09766 0.80078,-1.89844 2,-1.89844c1.19922,0 2,0.80078 2,1.80078c0,1.09766 -0.80078,1.89844 -2,1.89844zM21,20h-4v-6c0,-1.60156 -1.10156,-2 -1.39844,-2c-0.30078,0 -1.60156,0.19922 -1.60156,2c0,0.19922 0,6 0,6h-4v-11h4v1.60156c0.60156,-0.90234 1.60156,-1.60156 3.5,-1.60156c1.89844,0 3.5,1.5 3.5,5z"
-												></path>
-											</g>
-										</g>
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a href="https://github.com/up-lab">
-									<span class="screen-reader-text"
-										>Github</span
-									>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										x="0px"
-										y="0px"
-										width="16"
-										height="16"
-										viewBox="0,0,256,256"
-										style="fill: #000000"
-									>
-										<g
-											transform="translate(-39.68,-39.68) scale(1.31,1.31)"
-										>
-											<g
-												fill="#0270d7"
-												fill-rule="evenodd"
-												stroke="none"
-												stroke-width="1"
-												stroke-linecap="butt"
-												stroke-linejoin="miter"
-												stroke-miterlimit="10"
-												stroke-dasharray=""
-												stroke-dashoffset="0"
-												font-family="none"
-												font-weight="none"
-												font-size="none"
-												text-anchor="none"
-												style="mix-blend-mode: normal"
-											>
-												<g transform="scale(8,8)">
-													<path
-														d="M16,4c-6.62891,0 -12,5.37109 -12,12c0,5.30078 3.4375,9.80078 8.20703,11.38672c0.60156,0.10938 0.82031,-0.25781 0.82031,-0.57812c0,-0.28516 -0.01172,-1.03906 -0.01562,-2.03906c-3.33984,0.72266 -4.04297,-1.60937 -4.04297,-1.60937c-0.54687,-1.38672 -1.33203,-1.75781 -1.33203,-1.75781c-1.08984,-0.74219 0.08203,-0.72656 0.08203,-0.72656c1.20313,0.08594 1.83594,1.23438 1.83594,1.23438c1.07031,1.83594 2.80859,1.30469 3.49219,1c0.10938,-0.77734 0.42188,-1.30469 0.76172,-1.60547c-2.66406,-0.30078 -5.46484,-1.33203 -5.46484,-5.92969c0,-1.3125 0.46875,-2.38281 1.23438,-3.22266c-0.12109,-0.30078 -0.53516,-1.52344 0.11719,-3.17578c0,0 1.00781,-0.32031 3.30078,1.23047c0.95703,-0.26562 1.98438,-0.39844 3.00391,-0.40234c1.01953,0.00391 2.04688,0.13672 3.00391,0.40234c2.29297,-1.55078 3.29688,-1.23047 3.29688,-1.23047c0.65625,1.65234 0.24609,2.875 0.12109,3.17578c0.76953,0.83984 1.23047,1.91016 1.23047,3.22266c0,4.60938 -2.80469,5.62109 -5.47656,5.92188c0.42969,0.36719 0.8125,1.10156 0.8125,2.21875c0,1.60547 -0.01172,2.89844 -0.01172,3.29297c0,0.32031 0.21484,0.69531 0.82422,0.57813c4.76563,-1.58984 8.19922,-6.08594 8.19922,-11.38672c0,-6.62891 -5.37109,-12 -12,-12z"
-													></path>
-												</g>
-											</g>
-										</g>
-									</svg>
-								</a>
-							</li>
-						</ul>
-						<div class="footer-copyright">
-							&copy; 2023 Uplab SAS<br />
-							RCS Lyon 823 752 175
-						</div>
-					</div>
-				</div>
-			</footer>
+		<div class="bg" aria-hidden="true">
+			<div class="bg-grid"></div>
+			<div class="bg-glow bg-glow-1"></div>
+			<div class="bg-glow bg-glow-2"></div>
 		</div>
 
-		<script src="dist/js/main.min.js"></script>
+		<header class="nav">
+			<div class="container nav-inner">
+				<a href="#top" class="nav-brand" aria-label="Uplab home">
+					<svg class="logo" viewBox="0 -12 744 384" aria-hidden="true">
+						<defs>
+							<clipPath id="logo-tube"><path d="M48 30H132V246A42 42 0 0 1 48 246Z" /></clipPath>
+							<mask id="logo-holes" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="320">
+								<rect width="200" height="320" fill="#fff" />
+								<circle class="logo-hole" cx="78" cy="276" r="13" style="--dx: -40px; --dy: -100px; animation-duration: 6.0s; animation-delay: 0.0s" />
+								<circle class="logo-hole" cx="112" cy="276" r="6" style="--dx: -26px; --dy: -80px; animation-duration: 6.6s; animation-delay: -1.6s" />
+								<circle class="logo-hole" cx="92" cy="276" r="9" style="--dx: -10px; --dy: -94px; animation-duration: 5.4s; animation-delay: -3.1s" />
+								<circle class="logo-hole" cx="64" cy="276" r="4.5" style="--dx: -28px; --dy: -72px; animation-duration: 7.0s; animation-delay: -4.6s" />
+							</mask>
+						</defs>
+						<g class="logo-letters" fill-rule="evenodd">
+							<path d="M0 42Q0 36 6 36H36Q42 36 42 42V246A48 48 0 0 0 138 246V42Q138 36 144 36H174Q180 36 180 42V258A90 66 0 0 1 0 258Z" />
+							<path d="M186 120Q186 114 192 114H228Q234 114 234 120V366Q234 372 228 372H192Q186 372 186 366Z" />
+							<path d="M228 138C236 130 246 126 258 126C302 126 324 160 324 212C324 266 298 300 262 300C248 300 236 296 228 288ZM234 174C234 159 244 150 258 150C274 150 282 174 282 210C282 246 274 270 258 270C244 270 234 261 234 246Z" />
+							<path d="M378 78Q378 72 384 72H420Q426 72 426 78V258Q426 264 432 264H450Q456 264 456 270V273C456 289 441 300 420 300C394 300 378 284 378 258Z" />
+							<path d="M546 144C538 132 526 126 510 126C472 126 450 162 450 213C450 266 474 300 506 300C522 300 536 293 546 282ZM540 174C540 159 530 150 516 150C504 150 498 174 498 210C498 246 504 270 516 270C530 270 540 261 540 246Z" />
+							<path d="M540 132Q540 126 546 126H582Q588 126 588 132V258Q588 264 594 264H600Q606 264 606 270V273C606 289 596 300 582 300C558 300 540 288 540 264Z" />
+							<path d="M612 78Q612 72 618 72H654Q660 72 660 78V140C670 131 682 126 696 126C724 126 738 162 738 213C738 266 716 300 684 300H654C630 300 612 284 612 258ZM660 174C660 159 670 150 684 150C698 150 702 174 702 210C702 246 698 270 684 270C670 270 660 261 660 246Z" />
+						</g>
+						<g clip-path="url(#logo-tube)" mask="url(#logo-holes)">
+							<path class="logo-wave" d="M-525 97Q-481 127 -437 97T-349 97T-261 97T-173 97T-85 97T3 97T91 97T179 97T267 97T355 97V300H-525Z" />
+						</g>
+						<circle class="logo-drop" cx="78" cy="97" r="18" style="--dx: -40px; --dy: -100px; animation-duration: 6.0s; animation-delay: 0.0s" />
+						<circle class="logo-drop" cx="112" cy="97" r="7" style="--dx: -26px; --dy: -80px; animation-duration: 6.6s; animation-delay: -1.6s" />
+						<circle class="logo-drop" cx="92" cy="97" r="11" style="--dx: -10px; --dy: -94px; animation-duration: 5.4s; animation-delay: -3.1s" />
+						<circle class="logo-drop" cx="64" cy="97" r="5.5" style="--dx: -28px; --dy: -72px; animation-duration: 7.0s; animation-delay: -4.6s" />
+					</svg>
+				</a>
+				<nav class="nav-links" aria-label="Main">
+					<a href="#expertise">Expertise</a>
+					<a href="#projects">Projects</a>
+					<a href="#about">About</a>
+				</nav>
+				<a class="btn btn-sm btn-primary" href="mailto:sylvain@uplab.fr">Get in touch</a>
+			</div>
+		</header>
+
+		<main id="top">
+			<section class="hero">
+				<div class="container hero-inner">
+					<div class="hero-copy">
+						<p class="eyebrow reveal"><span class="dot"></span> AI-first tech studio · Lyon, France</p>
+						<h1 class="hero-title reveal">
+							Your AI tech team,<br />
+							<span class="gradient-text">as a service.</span>
+						</h1>
+						<p class="hero-lead reveal">
+							We design, build and ship AI agents and LLM-powered products — backed by 15+ years of
+							engineering technically challenging software. Let's build together 🤝🏼
+						</p>
+						<div class="hero-cta reveal">
+							<a class="btn btn-primary" href="mailto:sylvain@uplab.fr">
+								Get in touch
+								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+							</a>
+							<a class="btn btn-ghost" href="#expertise">Our competences</a>
+						</div>
+						<ul class="chips reveal" aria-label="Focus areas">
+							<li>AI agents</li>
+							<li>LLM apps</li>
+							<li>MCP</li>
+							<li>Automation</li>
+						</ul>
+					</div>
+					<div
+						class="build"
+						data-build
+						role="img"
+						aria-label="Animation: an AI agent is coded, connected to tools like GitHub, Linear, Slack and Postgres, then run"
+					>
+						<div class="build-graph">
+							<svg class="build-lines" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+							<div class="build-core">
+								<svg viewBox="0 0 24 24" aria-hidden="true">
+									<rect x="4" y="8" width="16" height="12" rx="3" />
+									<path d="M12 8V4M9 14h.01M15 14h.01M2 13v3M22 13v3" />
+									<circle cx="12" cy="3" r="1" />
+								</svg>
+							</div>
+						</div>
+						<div class="build-editor">
+							<div class="win-bar"><i></i><i></i><i></i><span data-file>agent.ts</span></div>
+							<pre data-code></pre>
+						</div>
+						<div class="build-run">
+							<div class="win-bar"><span>agent run</span></div>
+							<ul data-log></ul>
+							<p class="build-status" data-status></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="expertise" class="section">
+				<div class="container">
+					<header class="section-head reveal">
+						<p class="kicker">What we do</p>
+						<h2>AI first. Solid engineering underneath.</h2>
+						<p class="section-lead">
+							AI is our primary focus. We pair it with years of backend, data and infrastructure
+							experience, so what we build holds up in production.
+						</p>
+					</header>
+
+					<div class="ai-grid">
+						<article class="card card-ai card-ai-main reveal">
+							<span class="badge">Primary focus</span>
+							<ol class="agent-flow" aria-hidden="true">
+								<li>plan</li>
+								<li>call tools</li>
+								<li>verify</li>
+								<li class="is-done">ship</li>
+							</ol>
+							<div class="card-icon">
+								<svg viewBox="0 0 24 24" aria-hidden="true">
+									<rect x="4" y="8" width="16" height="12" rx="3" />
+									<path d="M12 8V4M9 14h.01M15 14h.01M2 13v3M22 13v3" />
+									<circle cx="12" cy="3" r="1" />
+								</svg>
+							</div>
+							<h3>AI agents &amp; automation</h3>
+							<p>
+								Autonomous agents that plan, call tools and get real work done — wired into your
+								systems with guardrails, budgets and audit trails.
+							</p>
+							<ul class="tick-list">
+								<li>Agentic workflows &amp; tool use</li>
+								<li>Human-in-the-loop review</li>
+								<li>Cost &amp; safety controls</li>
+							</ul>
+						</article>
+						<article class="card card-ai reveal">
+							<div class="card-icon">
+								<svg viewBox="0 0 24 24" aria-hidden="true">
+									<path
+										d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"
+									/>
+									<path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z" />
+								</svg>
+							</div>
+							<h3>LLM-powered products</h3>
+							<p>
+								AI features and copilots built right into your product, from document understanding to
+								content generation — taken from prototype to production.
+							</p>
+						</article>
+						<article class="card card-ai reveal">
+							<div class="card-icon">
+								<svg viewBox="0 0 24 24" aria-hidden="true">
+									<path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4" />
+								</svg>
+							</div>
+							<h3>MCP &amp; agent infrastructure</h3>
+							<p>
+								MCP servers, tool integrations and sandboxed runtimes that let models act safely on
+								real infrastructure.
+							</p>
+						</article>
+					</div>
+
+					<p class="subhead reveal">Foundations</p>
+					<div class="foundation-grid">
+						<article class="card card-sm reveal">
+							<div class="card-icon card-icon-muted">
+								<svg viewBox="0 0 24 24" aria-hidden="true">
+									<rect x="3" y="4" width="18" height="7" rx="2" />
+									<rect x="3" y="13" width="18" height="7" rx="2" />
+									<path d="M7 7.5h.01M7 16.5h.01" />
+								</svg>
+							</div>
+							<h4>Backend</h4>
+							<p>
+								Delivering high availability APIs &amp; scalable backends, with a focus on performance.
+							</p>
+						</article>
+						<article class="card card-sm reveal">
+							<div class="card-icon card-icon-muted">
+								<svg viewBox="0 0 24 24" aria-hidden="true">
+									<ellipse cx="12" cy="5" rx="8" ry="3" />
+									<path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" />
+								</svg>
+							</div>
+							<h4>Data engineering</h4>
+							<p>
+								Optimizing DB access for each use case. Leveraging multiple DB engines such as SQL,
+								MongoDB, Redis, ElasticSearch, Neo4j.
+							</p>
+						</article>
+						<article class="card card-sm reveal">
+							<div class="card-icon card-icon-muted">
+								<svg viewBox="0 0 24 24" aria-hidden="true">
+									<path
+										d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"
+									/>
+								</svg>
+							</div>
+							<h4>Blockchain</h4>
+							<p>Building decentralized applications interacting with smart contracts on any EVM chain.</p>
+						</article>
+						<article class="card card-sm reveal">
+							<div class="card-icon card-icon-muted">
+								<svg viewBox="0 0 24 24" aria-hidden="true">
+									<path d="M7 18a5 5 0 0 1-.6-10A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z" />
+								</svg>
+							</div>
+							<h4>DevOps</h4>
+							<p>
+								Deploying applications as microservices in the cloud, for higher uptime and cost
+								optimization.
+							</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section id="projects" class="section">
+				<div class="container">
+					<header class="section-head reveal">
+						<p class="kicker">Live projects</p>
+						<h2>Built and run by Uplab.</h2>
+						<p class="section-lead">
+							We don't just build for clients — we ship our own AI products and run them in production.
+							Meet the first one.
+						</p>
+					</header>
+
+					<article class="briq reveal" aria-labelledby="briq-title">
+						<div class="briq-wall" aria-hidden="true"></div>
+
+						<div class="briq-main">
+							<div class="briq-copy">
+								<div class="briq-brand">
+									<svg class="briq-mark" viewBox="0 0 16 16" aria-hidden="true">
+										<rect x="1" y="2" width="4" height="12" rx="0.4" />
+										<rect x="6" y="2" width="7" height="5" rx="0.4" />
+										<rect x="6" y="8" width="9" height="6" rx="0.4" />
+									</svg>
+									<span class="briq-wordmark">briq</span>
+									<span class="briq-live"><span class="dot"></span> Live</span>
+								</div>
+								<p class="briq-eyebrow">services for coding agents · EU-hosted</p>
+								<h3 id="briq-title" class="briq-title">Give your agent<br />its own cloud.</h3>
+								<p class="briq-lead">
+									A real database, browser or whole app in one MCP call. briq starts it, your agent
+									uses it, then throws it away.
+								</p>
+								<div class="briq-cta">
+									<a class="briq-btn" href="https://briq.cloud" target="_blank" rel="noopener">
+										Connect your agent
+										<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+									</a>
+									<a class="briq-btn briq-btn-ghost" href="https://briq.cloud/docs" target="_blank" rel="noopener">
+										Read the docs
+									</a>
+								</div>
+								<p class="briq-note">Start free with €10 of credits, no card · works with any MCP</p>
+							</div>
+
+							<div class="briq-visual" aria-hidden="true">
+								<svg class="briq-diagram" viewBox="0 0 460 330">
+									<path class="briq-link briq-link-green" d="M150 158C230 158 250 66 330 66" />
+									<path class="briq-link briq-link-blue" d="M150 168H300" />
+									<path class="briq-link briq-link-purple" d="M95 194V262" />
+									<path class="briq-link briq-link-blue" d="M350 194C350 230 380 230 380 262" />
+
+									<g class="briq-node briq-node-agent">
+										<rect x="93" y="120" width="4" height="22" rx="1" />
+										<rect x="40" y="140" width="110" height="54" rx="4" />
+										<rect class="briq-eye" x="70" y="160" width="12" height="12" rx="1" />
+										<rect class="briq-eye" x="108" y="160" width="12" height="12" rx="1" />
+									</g>
+									<g class="briq-node briq-node-1">
+										<rect class="briq-green" x="330" y="40" width="100" height="52" rx="4" />
+										<svg x="368" y="54" width="24" height="24" viewBox="0 0 24 24"><path d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.383 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0l8.795-5.076 c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.139,0.235l2.409,1.392 c1.307,0.654,2.108-0.116,2.108-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0.139,0,0.255,0.112,0.255,0.253v10.021 c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-2.026-0.551L2.28,18.675c-0.57-0.329-0.922-0.945-0.922-1.604V6.921 c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082c0.57,0.329,0.924,0.944,0.924,1.603 v10.15c0,0.659-0.354,1.273-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z M19.099,13.993 c0-1.9-1.284-2.406-3.987-2.763c-2.731-0.361-3.009-0.548-3.009-1.187c0-0.528,0.235-1.233,2.258-1.233 c1.807,0,2.473,0.389,2.747,1.607c0.024,0.115,0.129,0.199,0.247,0.199h1.141c0.071,0,0.138-0.031,0.186-0.081 c0.048-0.054,0.074-0.123,0.067-0.196c-0.177-2.098-1.571-3.076-4.388-3.076c-2.508,0-4.004,1.058-4.004,2.833 c0,1.925,1.488,2.457,3.895,2.695c2.88,0.282,3.103,0.703,3.103,1.269c0,0.983-0.789,1.402-2.642,1.402 c-2.327,0-2.839-0.584-3.011-1.742c-0.02-0.124-0.126-0.215-0.253-0.215h-1.137c-0.141,0-0.254,0.112-0.254,0.253 c0,1.482,0.806,3.248,4.655,3.248C17.501,17.007,19.099,15.91,19.099,13.993z" /></svg>
+									</g>
+									<g class="briq-node briq-node-2">
+										<rect class="briq-blue" x="300" y="142" width="100" height="52" rx="4" />
+										<svg x="338" y="156" width="24" height="24" viewBox="0 0 24 24"><path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z" /></svg>
+									</g>
+									<g class="briq-node briq-node-3">
+										<rect class="briq-purple" x="20" y="262" width="200" height="52" rx="4" />
+										<svg x="108" y="276" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z" /></svg>
+									</g>
+									<g class="briq-node briq-node-4">
+										<rect class="briq-blue" x="330" y="262" width="100" height="52" rx="4" />
+										<svg x="368" y="276" width="24" height="24" viewBox="0 0 24 24"><path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z" /></svg>
+									</g>
+									<text class="briq-tag" x="392" y="236">fork</text>
+								</svg>
+								<div class="briq-ticker">
+									<span>cost so far €0.01 · sleeps at 18:42</span>
+									<span>cost so far €0.84 · sleeps in 4 min</span>
+									<span>cost so far €1.00 · stopped, daily cap</span>
+								</div>
+							</div>
+						</div>
+
+						<ul class="briq-features">
+							<li>
+								<span class="briq-key">27 services</span>
+								<strong>One call away</strong>
+								<p>Postgres, Redis, Chrome, Grafana: each comes up configured, with its connection string.</p>
+							</li>
+							<li>
+								<span class="briq-key">1 call</span>
+								<strong>Safe to break things</strong>
+								<p>Copy a database or a whole app. Try the risky change on the copy; the original never notices.</p>
+							</li>
+							<li>
+								<span class="briq-key">daily cap</span>
+								<strong>It can't burn your budget</strong>
+								<p>Each agent gets a cap, checked before anything starts, and sees what it has cost so far.</p>
+							</li>
+							<li>
+								<span class="briq-key">€0.00/h</span>
+								<strong>No idle bill</strong>
+								<p>Idle services sleep for free and wake in about a second, data intact.</p>
+							</li>
+						</ul>
+
+						<footer class="briq-foot">
+							<a href="https://briq.cloud" target="_blank" rel="noopener">briq.cloud</a>
+							<a href="https://x.com/briq_cloud" target="_blank" rel="noopener">@briq_cloud</a>
+							<span>Built by Uplab</span>
+						</footer>
+					</article>
+				</div>
+			</section>
+
+			<section id="about" class="section">
+				<div class="container about">
+					<div class="about-photo reveal">
+						<img src="dist/images/sylvain.png" alt="Sylvain, Uplab founder" width="1000" height="1000" loading="lazy" />
+					</div>
+					<div class="about-copy reveal">
+						<p class="kicker">Meet us</p>
+						<h2>Hi, I'm Sylvain, Uplab founder 👋🏼</h2>
+						<p>
+							We are a team of passionate engineers, focused on customer satisfaction. We help companies
+							launch technically challenging and innovative products — today, mostly powered by AI 🎯
+						</p>
+						<a class="text-link" href="https://www.linkedin.com/in/sylvain-goumy/" target="_blank" rel="noopener">
+							Connect on LinkedIn
+							<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="section section-cta">
+				<div class="container">
+					<div class="cta reveal">
+						<h2>Let's talk about your project!</h2>
+						<p>Tell us what you want to build — we'll tell you how AI can get it there.</p>
+						<a class="btn btn-primary" href="mailto:sylvain@uplab.fr">
+							Get in touch
+							<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="container footer-inner">
+				<div class="footer-brand">
+					<svg class="logo" viewBox="0 -12 744 384" role="img" aria-label="Uplab">
+						<g class="logo-letters" fill-rule="evenodd">
+							<path d="M0 42Q0 36 6 36H36Q42 36 42 42V246A48 48 0 0 0 138 246V42Q138 36 144 36H174Q180 36 180 42V258A90 66 0 0 1 0 258Z" />
+							<path d="M186 120Q186 114 192 114H228Q234 114 234 120V366Q234 372 228 372H192Q186 372 186 366Z" />
+							<path d="M228 138C236 130 246 126 258 126C302 126 324 160 324 212C324 266 298 300 262 300C248 300 236 296 228 288ZM234 174C234 159 244 150 258 150C274 150 282 174 282 210C282 246 274 270 258 270C244 270 234 261 234 246Z" />
+							<path d="M378 78Q378 72 384 72H420Q426 72 426 78V258Q426 264 432 264H450Q456 264 456 270V273C456 289 441 300 420 300C394 300 378 284 378 258Z" />
+							<path d="M546 144C538 132 526 126 510 126C472 126 450 162 450 213C450 266 474 300 506 300C522 300 536 293 546 282ZM540 174C540 159 530 150 516 150C504 150 498 174 498 210C498 246 504 270 516 270C530 270 540 261 540 246Z" />
+							<path d="M540 132Q540 126 546 126H582Q588 126 588 132V258Q588 264 594 264H600Q606 264 606 270V273C606 289 596 300 582 300C558 300 540 288 540 264Z" />
+							<path d="M612 78Q612 72 618 72H654Q660 72 660 78V140C670 131 682 126 696 126C724 126 738 162 738 213C738 266 716 300 684 300H654C630 300 612 284 612 258ZM660 174C660 159 670 150 684 150C698 150 702 174 702 210C702 246 698 270 684 270C670 270 660 261 660 246Z" />
+						</g>
+						<g clip-path="url(#logo-tube)" mask="url(#logo-holes)">
+							<path class="logo-wave" d="M-525 97Q-481 127 -437 97T-349 97T-261 97T-173 97T-85 97T3 97T91 97T179 97T267 97T355 97V300H-525Z" />
+						</g>
+						<circle class="logo-drop" cx="78" cy="97" r="18" style="--dx: -40px; --dy: -100px; animation-duration: 6.0s; animation-delay: 0.0s" />
+						<circle class="logo-drop" cx="112" cy="97" r="7" style="--dx: -26px; --dy: -80px; animation-duration: 6.6s; animation-delay: -1.6s" />
+						<circle class="logo-drop" cx="92" cy="97" r="11" style="--dx: -10px; --dy: -94px; animation-duration: 5.4s; animation-delay: -3.1s" />
+						<circle class="logo-drop" cx="64" cy="97" r="5.5" style="--dx: -28px; --dy: -72px; animation-duration: 7.0s; animation-delay: -4.6s" />
+					</svg>
+					<p>&copy; <span data-year>2026</span> Uplab SAS<br />RCS Lyon 823 752 175</p>
+				</div>
+				<address>
+					254 Rue Vendôme<br />
+					69003 Lyon<br />
+					France
+				</address>
+				<ul class="socials">
+					<li>
+						<a href="https://www.linkedin.com/in/sylvain-goumy/" aria-label="LinkedIn">
+							<svg viewBox="0 0 24 24" aria-hidden="true" class="fill">
+								<path
+									d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6zM8 19H5V9.5h3zM6.5 8.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S12.8 13 12.8 14.3V19h-3V9.5h2.9v1.3c.4-.8 1.4-1.5 2.9-1.5 3 0 3.5 2 3.5 4.6z"
+								/>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href="https://x.com/goooums" aria-label="X (Twitter)">
+							<svg viewBox="0 0 24 24" aria-hidden="true" class="fill">
+								<path
+									d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+								/>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/up-lab" aria-label="GitHub">
+							<svg viewBox="0 0 24 24" aria-hidden="true" class="fill">
+								<path
+									d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.6.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"
+								/>
+							</svg>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+
+		<script src="dist/js/main.js" defer></script>
+		<script src="dist/js/build.js" defer></script>
 	</body>
 </html>
